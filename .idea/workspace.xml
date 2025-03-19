@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1d2d98e3-7004-40a4-ac54-d710637c4853" name="Changes" comment="register method added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/IVehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/IVehicleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/VehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/VehicleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/IVehicleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/IVehicleRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/VehicleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/VehicleRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +111,7 @@
       <workItem from="1742408683354" duration="717000" />
       <workItem from="1742409411982" duration="907000" />
       <workItem from="1742410326889" duration="73000" />
-      <workItem from="1742410416925" duration="6623000" />
+      <workItem from="1742410416925" duration="7381000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />

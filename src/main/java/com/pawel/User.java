@@ -87,45 +87,15 @@ public class User {
             if(u.login.equals(this.login) && this.role.equals(Role.NORMAL)) {
                 System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
                 if(u.carId >= 0){
-                    for (Vehicle v : vehicles) {
-                        if (v.vin == u.carId) {
-                            System.out.println(v.toString());
-                            break;
-                        }
-                    }
+                    System.out.println(User.vehicleRepository.getVehicle(u.carId).toString());
                 }
             }else if(this.role.equals(Role.ADMIN)){
                 System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
                 if(u.carId >= 0){
-                    for (Vehicle v : vehicles) {
-                        if (v.vin == u.carId) {
-                            System.out.println(v.toString());
-                            break;
-                        }
-                    }
+                    System.out.println(User.vehicleRepository.getVehicle(u.carId).toString());
                 }
             }
         }
-
-//        if(this.role.equals(Role.ADMIN)){
-//
-//
-//                if(u.carId >= 0){
-//                    System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
-//
-//                }else{
-//                    System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
-//                }
-//            }
-//        }else{
-//            System.out.println("Login: " + this.login + "\nPassword: " + this.password + "\nRole: " + this.role + "\nRented vehicle: ");
-//            for(Vehicle v : vehicles){
-//                if(v.vin == this.carId){
-//                    System.out.println(v.toString());
-//                    break;
-//                }
-//            }
-//        }
     }
 
     public String getLogin() {

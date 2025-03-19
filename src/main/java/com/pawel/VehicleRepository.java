@@ -86,6 +86,11 @@ public class VehicleRepository implements IVehicleRepository{
     }
 
     @Override
+    public Vehicle getVehicle(int carId) {
+        return this.vehicles.stream().filter(v -> v.vin == carId).toList().getFirst();
+    }
+
+    @Override
     public void save() {
         File file = new File("vehicles.csv");
         String line;
