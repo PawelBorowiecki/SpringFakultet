@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d2d98e3-7004-40a4-ac54-d710637c4853" name="Changes" comment="Sign up added" />
+    <list default="true" id="1d2d98e3-7004-40a4-ac54-d710637c4853" name="Changes" comment="register method added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/Authentication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/User.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +111,7 @@
       <workItem from="1742408683354" duration="717000" />
       <workItem from="1742409411982" duration="907000" />
       <workItem from="1742410326889" duration="73000" />
-      <workItem from="1742410416925" duration="658000" />
+      <workItem from="1742410416925" duration="3768000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -129,7 +137,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742409026181</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <option name="closed" value="true" />
+      <created>1742411094618</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742411094618</updated>
+    </task>
+    <task id="LOCAL-00005" summary="register method added">
+      <option name="closed" value="true" />
+      <created>1742411304336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742411304336</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +162,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
     <MESSAGE value="Sign up added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sign up added" />
+    <MESSAGE value="." />
+    <MESSAGE value="register method added" />
+    <option name="LAST_COMMIT_MESSAGE" value="register method added" />
   </component>
 </project>

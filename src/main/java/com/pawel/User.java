@@ -22,11 +22,13 @@ public class User {
         this.carId = carId;
     }
 
-    public void signIn(String inputLogin, String inputPassword){
-        if(!User.userRepository.contains(this.login)){
-            User.userRepository.addUser(this);
+    public boolean signIn(){
+        if(Authentication.isLoginDataCorrect(this.login, this.password, this.role)){
+            System.out.println("Zalogowano.");
+            return true;
         }
-        //TODO wywolanie metody klasy Authentication
+        System.out.println("Nie udalo sie zalogowac. Sprobuj ponownie.");
+        return false;
     }
 
     public void register(){

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //TODO rejestracja i hashowanie
+        //TODO rejestracja i hashowanie. IVehicleRepository dodac getWehicle(carId)
         Scanner scanner = new Scanner(System.in);
         int option, carYear, carVin, carPrice;
         String loginType, category, inputLogin, inputPassword, inputRole, inputBrand, inputModel, inputType;
@@ -39,39 +39,38 @@ public class Main {
         while(true) {
             if(!isLoggedIn){
                 do{
-                    System.out.println("Zaloguj sie lub zarejestruj. Jesli chcesz sie zalogowac wybierz L, jesli chcesz sie zarejestrować wybierz S");
+                    System.out.println("Zaloguj sie lub zarejestruj. Jesli chcesz sie zalogowac wybierz L, jesli chcesz sie zarejestrować wybierz S.");
                     loginType = scanner.next();
                 }while(!(loginType.equalsIgnoreCase("L") || loginType.equalsIgnoreCase("S")));
-                if(loginType.equals("S")){
+                if(loginType.equalsIgnoreCase("S")){
                     System.out.println("Podaj login:");
                     inputLogin = scanner.next();
                     System.out.println("Podaj haslo:");
                     inputPassword = scanner.next();
+                    inputPassword = DigestUtils.sha256Hex(inputPassword);
                     System.out.println("Jezeli bedziesz administratorem wpisz A. Jesli nie, wpisz cokolwiek innego.");
                     inputRole = scanner.next();
                     if(inputRole.equalsIgnoreCase("A")){
                         currentUser = new User(inputLogin, inputPassword, Role.ADMIN);
-                        currentUser.signIn(inputLogin, inputPassword);
                     }else{
                         currentUser = new User(inputLogin, inputPassword, Role.NORMAL);
-                        currentUser.signIn(inputLogin, inputPassword);
                     }
                     currentUser.register();
                     isLoggedIn = true;
                 }else{
+                    System.out.println("Podaj login:");
                     inputLogin = scanner.next();
                     System.out.println("Podaj haslo:");
                     inputPassword = scanner.next();
+                    inputPassword = DigestUtils.sha256Hex(inputPassword);
                     System.out.println("Jezeli masz uprawnienia administratora wpisz A. Jesli nie, wpisz cokolwiek innego.");
                     inputRole = scanner.next();
                     if(inputRole.equalsIgnoreCase("A")){
                         currentUser = new User(inputLogin, inputPassword, Role.ADMIN);
-                        currentUser.signIn(inputLogin, inputPassword);
                     }else{
                         currentUser = new User(inputLogin, inputPassword, Role.NORMAL);
-                        currentUser.signIn(inputLogin, inputPassword);
                     }
-                    isLoggedIn = true;
+                    isLoggedIn = currentUser.signIn();
                 }
             }else{
                 if(currentUser.getRole().name().equals("ADMIN")){
