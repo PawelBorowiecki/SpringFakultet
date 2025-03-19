@@ -6,9 +6,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //TODO rejestracja i hashowanie
         Scanner scanner = new Scanner(System.in);
         int option, carYear, carVin, carPrice;
-        String category, inputLogin, inputPassword, inputRole, inputBrand, inputModel, inputType;
+        String loginType, category, inputLogin, inputPassword, inputRole, inputBrand, inputModel, inputType;
         boolean isLoggedIn = false;
         User currentUser = null;
 
@@ -37,20 +38,40 @@ public class Main {
         System.out.println("Witaj w wypozyczalni pojazdow!");
         while(true) {
             if(!isLoggedIn){
-                System.out.println("Zaloguj sie. Jesli pierwszy raz korzystasz z naszych uslug podaj dane, ktorymi bedziesz identyfikowany w przyszlosci.\nPodaj login:");
-                inputLogin = scanner.next();
-                System.out.println("Podaj haslo:");
-                inputPassword = scanner.next();
-                System.out.println("Jezeli masz uprawnienia administratora wpisz A. Jesli nie, wpisz cokolwiek innego.");
-                inputRole = scanner.next();
-                if(inputRole.equalsIgnoreCase("A")){
-                    currentUser = new User(inputLogin, inputPassword, Role.ADMIN);
-                    currentUser.signIn(inputLogin, inputPassword);
+                do{
+                    System.out.println("Zaloguj sie lub zarejestruj. Jesli chcesz sie zalogowac wybierz L, jesli chcesz sie zarejestrować wybierz S");
+                    loginType = scanner.next();
+                }while(!(loginType.equalsIgnoreCase("L") || loginType.equalsIgnoreCase("S")));
+                if(loginType.equals("S")){
+                    System.out.println("Podaj login:");
+                    inputLogin = scanner.next();
+                    System.out.println("Podaj haslo:");
+                    inputPassword = scanner.next();
+                    System.out.println("Jezeli bedziesz administratorem wpisz A. Jesli nie, wpisz cokolwiek innego.");
+                    inputRole = scanner.next();
+                    if(inputRole.equalsIgnoreCase("A")){
+                        currentUser = new User(inputLogin, inputPassword, Role.ADMIN);
+                        currentUser.signIn(inputLogin, inputPassword);
+                    }else{
+                        currentUser = new User(inputLogin, inputPassword, Role.NORMAL);
+                        currentUser.signIn(inputLogin, inputPassword);
+                    }
+                    isLoggedIn = true;
                 }else{
-                    currentUser = new User(inputLogin, inputPassword, Role.NORMAL);
-                    currentUser.signIn(inputLogin, inputPassword);
+                    inputLogin = scanner.next();
+                    System.out.println("Podaj haslo:");
+                    inputPassword = scanner.next();
+                    System.out.println("Jezeli masz uprawnienia administratora wpisz A. Jesli nie, wpisz cokolwiek innego.");
+                    inputRole = scanner.next();
+                    if(inputRole.equalsIgnoreCase("A")){
+                        currentUser = new User(inputLogin, inputPassword, Role.ADMIN);
+                        currentUser.signIn(inputLogin, inputPassword);
+                    }else{
+                        currentUser = new User(inputLogin, inputPassword, Role.NORMAL);
+                        currentUser.signIn(inputLogin, inputPassword);
+                    }
+                    isLoggedIn = true;
                 }
-                isLoggedIn = true;
             }else{
                 if(currentUser.getRole().name().equals("ADMIN")){
                     System.out.println("""
