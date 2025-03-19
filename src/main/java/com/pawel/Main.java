@@ -56,6 +56,7 @@ public class Main {
                         currentUser = new User(inputLogin, inputPassword, Role.NORMAL);
                         currentUser.signIn(inputLogin, inputPassword);
                     }
+                    currentUser.register();
                     isLoggedIn = true;
                 }else{
                     inputLogin = scanner.next();
