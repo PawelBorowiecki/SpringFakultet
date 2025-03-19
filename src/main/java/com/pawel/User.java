@@ -29,6 +29,10 @@ public class User {
         //TODO wywolanie metody klasy Authentication
     }
 
+    public void register(){
+        User.userRepository.addUser(this);
+    }
+
     public void rentVehicle(int priceLimit, String prefferedBrand, String prefferedModel, String category){
         String rentStatus = User.vehicleRepository.rentVehicle(priceLimit, prefferedBrand, prefferedModel, category);
         if(!rentStatus.equals("Nie udalo sie znalezc pojazdu spelniajacego Twoje wymagania.")){
