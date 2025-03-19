@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //TODO rejestracja i hashowanie. IVehicleRepository dodac getWehicle(carId)
+        //TODO IVehicleRepository dodac getWehicle(carId)
         Scanner scanner = new Scanner(System.in);
         int option, carYear, carVin, carPrice;
         String loginType, category, inputLogin, inputPassword, inputRole, inputBrand, inputModel, inputType;
@@ -42,6 +42,7 @@ public class Main {
                     System.out.println("Zaloguj sie lub zarejestruj. Jesli chcesz sie zalogowac wybierz L, jesli chcesz sie zarejestrować wybierz S.");
                     loginType = scanner.next();
                 }while(!(loginType.equalsIgnoreCase("L") || loginType.equalsIgnoreCase("S")));
+
                 if(loginType.equalsIgnoreCase("S")){
                     System.out.println("Podaj login:");
                     inputLogin = scanner.next();
@@ -113,7 +114,7 @@ public class Main {
                     }else if(option == 3){
                         currentUser.showAvailableVehicles();
                     }else if(option == 4){
-                        currentUser.showUsersStatistics();
+                        currentUser.showUserStatistics();
                     }else if(option == 5){
                         do{
                             System.out.println("Podaj kategorie prawa jazdy potrzebna do jezdzenia pojazdem, ktory chcesz wypozyczyc.");
@@ -144,6 +145,7 @@ public class Main {
                     System.out.println("""
                             Jesli chcesz wypozyczyc pojazd wybierz 1.
                             Jesli chcesz zwrocic pojazd wybierz 2.
+                            Jesli chcesz wyswietlic statystyki swojego konta wybierz 3.
                             Jesli chcesz sie wylogowac wybierz inna liczbe.""");
                     option = scanner.nextInt();
                     if (option == 1) {
@@ -166,7 +168,7 @@ public class Main {
                         carVin = scanner.nextInt();
                         currentUser.returnVehicle(carVin);
                     }else if(option == 3){
-                        currentUser.showAvailableVehicles();
+                        currentUser.showUserStatistics();
                     }else{
                         isLoggedIn = false;
                         System.out.println("Wylogowano");

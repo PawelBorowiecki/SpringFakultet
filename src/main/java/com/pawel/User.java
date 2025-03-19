@@ -79,26 +79,53 @@ public class User {
         }
     }
 
-    public void showUsersStatistics(){
-        if(this.role.equals(Role.ADMIN)){
-            List<User> users = User.userRepository.getUsers();
-            List<Vehicle> vehicles = User.vehicleRepository.getVehicles();
-            for(User u : users){
+    public void showUserStatistics(){
+        List<Vehicle> vehicles = User.vehicleRepository.getVehicles();
+        List<User> users = User.userRepository.getUsers();
+
+        for(User u : users) {
+            if(u.login.equals(this.login) && this.role.equals(Role.NORMAL)) {
+                System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
                 if(u.carId >= 0){
-                    System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
-                    for(Vehicle v : vehicles){
-                        if(v.vin == u.carId){
+                    for (Vehicle v : vehicles) {
+                        if (v.vin == u.carId) {
                             System.out.println(v.toString());
                             break;
                         }
                     }
-                }else{
-                    System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented car: ");
+                }
+            }else if(this.role.equals(Role.ADMIN)){
+                System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
+                if(u.carId >= 0){
+                    for (Vehicle v : vehicles) {
+                        if (v.vin == u.carId) {
+                            System.out.println(v.toString());
+                            break;
+                        }
+                    }
                 }
             }
-        }else{
-            System.out.println("Nie masz uprawnien do wykonania tej operacji.");
         }
+
+//        if(this.role.equals(Role.ADMIN)){
+//
+//
+//                if(u.carId >= 0){
+//                    System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
+//
+//                }else{
+//                    System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
+//                }
+//            }
+//        }else{
+//            System.out.println("Login: " + this.login + "\nPassword: " + this.password + "\nRole: " + this.role + "\nRented vehicle: ");
+//            for(Vehicle v : vehicles){
+//                if(v.vin == this.carId){
+//                    System.out.println(v.toString());
+//                    break;
+//                }
+//            }
+//        }
     }
 
     public String getLogin() {
