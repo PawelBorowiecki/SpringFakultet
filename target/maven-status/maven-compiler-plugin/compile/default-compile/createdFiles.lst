@@ -1,0 +1,11 @@
+com\pawel\Role.class
+com\pawel\Vehicle.class
+com\pawel\Car.class
+com\pawel\UserRepository.class
+com\pawel\IUserRepository.class
+com\pawel\Motorcycle.class
+com\pawel\Authentication.class
+com\pawel\IVehicleRepository.class
+com\pawel\User.class
+com\pawel\Main.class
+com\pawel\VehicleRepository.class

@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d2d98e3-7004-40a4-ac54-d710637c4853" name="Changes" comment="register method added">
+    <list default="true" id="1d2d98e3-7004-40a4-ac54-d710637c4853" name="Changes" comment="addVehicle and removeVehicle upgraded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/IVehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/IVehicleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pawel/VehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pawel/VehicleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Zad2-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Zad2-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/IVehicleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/IVehicleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pawel/VehicleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pawel/VehicleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/asm-9.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/asm-commons-9.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/asm-tree-9.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/commons-codec-1.17.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/commons-compress-1.26.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/commons-io-2.16.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/commons-lang3-3.14.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/jdependency-2.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/jdom2-2.0.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/maven-shade-plugin-3.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/plexus-utils-3.5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/libs/slf4j-api-1.7.36.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,43 +57,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.Zad2-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.original-Zad2-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Zad2 [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Zad2 [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pavlo/OneDrive/Pulpit/Foldery/Nauka/Informatyka/Studia/4Semestr/SpringFramework/Zad2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JAR Application.Zad2-1.0-SNAPSHOT.jar.executor": "Run",
+    "JAR Application.original-Zad2-1.0-SNAPSHOT.jar.executor": "Run",
+    "Maven.Zad2 [clean].executor": "Run",
+    "Maven.Zad2 [install].executor": "Run",
+    "Maven.Zad2 [package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pavlo/OneDrive/Pulpit/Foldery/Nauka/Informatyka/Studia/4Semestr/SpringFramework/Zad2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Zad2-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/Zad2-1.0-SNAPSHOT.jar" />
       <method v="2" />
     </configuration>
-    <configuration name="original-Zad2-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/target/original-Zad2-1.0-SNAPSHOT.jar" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JAR Application.Zad2-1.0-SNAPSHOT.jar" />
-        <item itemvalue="JAR Application.original-Zad2-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -111,7 +121,7 @@
       <workItem from="1742409411982" duration="907000" />
       <workItem from="1742410326889" duration="73000" />
       <workItem from="1742410416925" duration="8260000" />
-      <workItem from="1742488182770" duration="2235000" />
+      <workItem from="1742488182770" duration="3129000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -153,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742411304336</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="addVehicle and removeVehicle upgraded">
+      <option name="closed" value="true" />
+      <created>1742491328082</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742491328082</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +182,7 @@
     <MESSAGE value="Sign up added" />
     <MESSAGE value="." />
     <MESSAGE value="register method added" />
-    <option name="LAST_COMMIT_MESSAGE" value="register method added" />
+    <MESSAGE value="addVehicle and removeVehicle upgraded" />
+    <option name="LAST_COMMIT_MESSAGE" value="addVehicle and removeVehicle upgraded" />
   </component>
 </project>
