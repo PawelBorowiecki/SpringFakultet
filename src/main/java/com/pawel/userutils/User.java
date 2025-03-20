@@ -62,7 +62,11 @@ public class User {
 
     public void addVehicle(Vehicle vehicle){
         if(this.role.equals(Role.ADMIN)){
-            User.vehicleRepository.addVehicle(vehicle);
+            if(!User.vehicleRepository.containsVehicle(vehicle.getVin())){
+                User.vehicleRepository.addVehicle(vehicle);
+            }else{
+                System.out.println("Pojazd o podanym numerze VIN juz istnieje. Sprobuj ponownie dodac pojazd podajac wlasciwe dane.");
+            }
         }else{
             System.out.println("Nie masz uprawnien do wykonania tej operacji.");
         }

@@ -139,4 +139,13 @@ public class VehicleRepository implements IVehicleRepository{
         save();
         return removeStatus;
     }
+
+    public boolean containsVehicle(int vin){
+        for(Vehicle v : this.vehicles){
+            if(v.getVin() == vin){
+                return true;
+            }
+        }
+        return false;
+    }
 }
