@@ -1,5 +1,9 @@
 package com.pawel;
 
+import com.pawel.userutils.Role;
+import com.pawel.userutils.User;
+import com.pawel.vehicles.Car;
+import com.pawel.vehicles.Motorcycle;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.util.Scanner;

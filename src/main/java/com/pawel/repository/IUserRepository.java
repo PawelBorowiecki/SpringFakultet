@@ -1,4 +1,6 @@
-package com.pawel;
+package com.pawel.repository;
+
+import com.pawel.userutils.User;
 
 import java.util.List;
 

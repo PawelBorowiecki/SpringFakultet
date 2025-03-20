@@ -1,4 +1,4 @@
-package com.pawel;
+package com.pawel.userutils;
 
 import java.io.BufferedReader;
 import java.io.File;

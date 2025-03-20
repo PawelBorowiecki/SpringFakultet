@@ -1,4 +1,8 @@
-package com.pawel;
+package com.pawel.repository;
+
+import com.pawel.vehicles.Car;
+import com.pawel.vehicles.Motorcycle;
+import com.pawel.vehicles.Vehicle;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,8 +25,8 @@ public class VehicleRepository implements IVehicleRepository{
         if(category.equals("B") || category.equals("b")){
             for(Vehicle v : this.vehicles){
                 parameters = v.toString().split(" ");
-                if(v.brand.equals(prefferedBrand) && v.model.equals(prefferedModel) && v.price <= priceLimit && !v.rented && (parameters[6].equals("category='B'}") || parameters[6].equals("category='AM'}"))){
-                    v.rented = true;
+                if(v.getBrand().equals(prefferedBrand) && v.getModel().equals(prefferedModel) && v.getPrice() <= priceLimit && !v.isRented() && (parameters[6].equals("category='B'}") || parameters[6].equals("category='AM'}"))){
+                    v.setRented(true);
                     save();
                     return "Wypozyczono pojazd o podanych parametrach: \n" + v.toString();
                 }
@@ -30,8 +34,8 @@ public class VehicleRepository implements IVehicleRepository{
         }else if(category.equals("A") || category.equals("a")){
             for(Vehicle v : this.vehicles){
                 parameters = v.toString().split(" ");
-                if(v.brand.equals(prefferedBrand) && v.model.equals(prefferedModel) && v.price <= priceLimit && !v.rented && (parameters[6].equals("category='A'}") || parameters[6].equals("category='A1'}") || parameters[6].equals("category='A2'}") || parameters[6].equals("category='AM'}"))){
-                    v.rented = true;
+                if(v.getBrand().equals(prefferedBrand) && v.getModel().equals(prefferedModel) && v.getPrice() <= priceLimit && !v.isRented() && (parameters[6].equals("category='A'}") || parameters[6].equals("category='A1'}") || parameters[6].equals("category='A2'}") || parameters[6].equals("category='AM'}"))){
+                    v.setRented(true);
                     save();
                     return "Wypozyczono pojazd o podanych parametrach: \n" + v.toString();
                 }
@@ -39,8 +43,8 @@ public class VehicleRepository implements IVehicleRepository{
         }else if(category.equals("AM") || category.equals("am") || category.equals("Am") || category.equals("aM")){
             for(Vehicle v : this.vehicles){
                 parameters = v.toString().split(" ");
-                if(v.brand.equals(prefferedBrand) && v.model.equals(prefferedModel) && v.price <= priceLimit && !v.rented && parameters[6].equals("category='AM'}")){
-                    v.rented = true;
+                if(v.getBrand().equals(prefferedBrand) && v.getModel().equals(prefferedModel) && v.getPrice() <= priceLimit && !v.isRented() && parameters[6].equals("category='AM'}")){
+                    v.setRented(true);
                     save();
                     return "Wypozyczono pojazd o podanych parametrach: \n" + v.toString();
                 }
@@ -48,8 +52,8 @@ public class VehicleRepository implements IVehicleRepository{
         }else if(category.equals("A1") || category.equals("a1")){
             for(Vehicle v : this.vehicles){
                 parameters = v.toString().split(" ");
-                if(v.brand.equals(prefferedBrand) && v.model.equals(prefferedModel) && v.price <= priceLimit && !v.rented && (parameters[6].equals("category='A1'}")  || parameters[6].equals("category='AM'}"))){
-                    v.rented = true;
+                if(v.getBrand().equals(prefferedBrand) && v.getModel().equals(prefferedModel) && v.getPrice() <= priceLimit && !v.isRented() && (parameters[6].equals("category='A1'}")  || parameters[6].equals("category='AM'}"))){
+                    v.setRented(true);
                     save();
                     return "Wypozyczono pojazd o podanych parametrach: \n" + v.toString();
                 }
@@ -58,8 +62,8 @@ public class VehicleRepository implements IVehicleRepository{
         else if(category.equals("A2") || category.equals("a2")){
             for(Vehicle v : this.vehicles){
                 parameters = v.toString().split(" ");
-                if(v.brand.equals(prefferedBrand) && v.model.equals(prefferedModel) && v.price <= priceLimit && !v.rented && (parameters[6].equals("category='A2'}")|| parameters[6].equals("category='A1'}") || parameters[6].equals("category='AM'}"))){
-                    v.rented = true;
+                if(v.getBrand().equals(prefferedBrand) && v.getModel().equals(prefferedModel) && v.getPrice() <= priceLimit && !v.isRented() && (parameters[6].equals("category='A2'}")|| parameters[6].equals("category='A1'}") || parameters[6].equals("category='AM'}"))){
+                    v.setRented(true);
                     save();
                     return "Wypozyczono pojazd o podanych parametrach: \n" + v.toString();
                 }
@@ -71,8 +75,8 @@ public class VehicleRepository implements IVehicleRepository{
     @Override
     public String returnVehicle(int vin) {
         for(Vehicle v : this.vehicles){
-            if(vin == v.vin && v.rented){
-                v.rented = false;
+            if(vin == v.getVin() && v.isRented()){
+                v.setRented(false);
                 save();
                 return "Zwrocono pojazd o podanych parametrach:\n" + v.toString();
             }
@@ -87,7 +91,7 @@ public class VehicleRepository implements IVehicleRepository{
 
     @Override
     public Vehicle getVehicle(int carId) {
-        return this.vehicles.stream().filter(v -> v.vin == carId).toList().getFirst();
+        return this.vehicles.stream().filter(v -> v.getVin() == carId).toList().getFirst();
     }
 
     @Override
@@ -101,20 +105,20 @@ public class VehicleRepository implements IVehicleRepository{
             for(Vehicle v : this.vehicles){
                 String[] params = v.toString().split(" ");
                 if(params[6].equals("category='B'}")){
-                    Car car = new Car(v.brand, v.model, v.year, v.vin, v.price, v.rented, "B");
-                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", car.brand, car.model, car.vin, car.year, car.price, car.rented, car.category);
+                    Car car = new Car(v.getBrand(), v.getModel(), v.getYear(), v.getVin(), v.getPrice(), v.isRented(), "B");
+                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", car.getBrand(), car.getModel(), car.getVin(), car.getYear(), car.getPrice(), car.isRented(), car.getCategory());
                 }else if(params[6].equals("category='A'}")){
-                    Motorcycle moto = new Motorcycle(v.brand, v.model, v.year, v.vin, v.price, v.rented, "A");
-                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.brand, moto.model, moto.vin, moto.year, moto.price, moto.rented, moto.category);
+                    Motorcycle moto = new Motorcycle(v.getBrand(), v.getModel(), v.getYear(), v.getVin(), v.getPrice(), v.isRented(), "A");
+                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.getBrand(), moto.getModel(), moto.getVin(), moto.getYear(), moto.getPrice(), moto.isRented(), moto.getCategory());
                 }else if(params[6].equals("category='AM'}")){
-                    Motorcycle moto = new Motorcycle(v.brand, v.model, v.year, v.vin, v.price, v.rented, "AM");
-                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.brand, moto.model, moto.vin, moto.year, moto.price, moto.rented, moto.category);
+                    Motorcycle moto = new Motorcycle(v.getBrand(), v.getModel(), v.getYear(), v.getVin(), v.getPrice(), v.isRented(), "AM");
+                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.getBrand(), moto.getModel(), moto.getVin(), moto.getYear(), moto.getPrice(), moto.isRented(), moto.getCategory());
                 }else if(params[6].equals("category='A1'}")){
-                    Motorcycle moto = new Motorcycle(v.brand, v.model, v.year, v.vin, v.price, v.rented, "A1");
-                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.brand, moto.model, moto.vin, moto.year, moto.price, moto.rented, moto.category);
+                    Motorcycle moto = new Motorcycle(v.getBrand(), v.getModel(), v.getYear(), v.getVin(), v.getPrice(), v.isRented(), "A1");
+                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.getBrand(), moto.getModel(), moto.getVin(), moto.getYear(), moto.getPrice(), moto.isRented(), moto.getCategory());
                 }else{
-                    Motorcycle moto = new Motorcycle(v.brand, v.model, v.year, v.vin, v.price, v.rented, "A2");
-                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.brand, moto.model, moto.vin, moto.year, moto.price, moto.rented, moto.category);
+                    Motorcycle moto = new Motorcycle(v.getBrand(), v.getModel(), v.getYear(), v.getVin(), v.getPrice(), v.isRented(), "A2");
+                    line = String.format("%s;%s;%d;%d;%d;%b;%s\n", moto.getBrand(), moto.getModel(), moto.getVin(), moto.getYear(), moto.getPrice(), moto.isRented(), moto.getCategory());
                 }
                 printWriter.append(line);
             }
@@ -131,7 +135,7 @@ public class VehicleRepository implements IVehicleRepository{
 
     @Override
     public boolean removeVehicle(int vin) {
-        boolean removeStatus = this.vehicles.removeIf(v -> v.vin == vin && !v.rented);
+        boolean removeStatus = this.vehicles.removeIf(v -> v.getVin() == vin && !v.isRented());
         save();
         return removeStatus;
     }

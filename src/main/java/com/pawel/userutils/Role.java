@@ -1,4 +1,4 @@
-package com.pawel;
+package com.pawel.userutils;
 
 public enum Role {
     ADMIN,

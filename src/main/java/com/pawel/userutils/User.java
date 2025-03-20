@@ -1,4 +1,8 @@
-package com.pawel;
+package com.pawel.userutils;
+
+import com.pawel.repository.UserRepository;
+import com.pawel.repository.VehicleRepository;
+import com.pawel.vehicles.Vehicle;
 
 import java.util.List;
 
@@ -85,19 +89,19 @@ public class User {
     }
 
     public void showUserStatistics(){
-        List<User> users = User.userRepository.getUsers();
-
-        for(User u : users) {
-            if(u.login.equals(this.login) && this.role.equals(Role.NORMAL)) {
+        if(this.role.equals(Role.ADMIN)){
+            List<User> users = User.userRepository.getUsers();
+            for(User u : users){
                 System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
                 if(u.carId >= 0){
                     System.out.println(User.vehicleRepository.getVehicle(u.carId).toString());
                 }
-            }else if(this.role.equals(Role.ADMIN)){
-                System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
-                if(u.carId >= 0){
-                    System.out.println(User.vehicleRepository.getVehicle(u.carId).toString());
-                }
+            }
+        }else{
+            User u = userRepository.getUser(this.login);
+            System.out.println("Login: " + u.login + "\nPassword: " + u.password + "\nRole: " + u.role + "\nRented vehicle: ");
+            if(u.carId >= 0){
+                System.out.println(User.vehicleRepository.getVehicle(u.carId).toString());
             }
         }
     }

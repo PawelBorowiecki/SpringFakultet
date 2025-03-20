@@ -1,4 +1,6 @@
-package com.pawel;
+package com.pawel.repository;
+
+import com.pawel.vehicles.Vehicle;
 
 import java.util.List;
 
