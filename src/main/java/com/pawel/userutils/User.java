@@ -7,11 +7,11 @@ import com.pawel.vehicles.Vehicle;
 import java.util.List;
 
 public class User {
-    private String login, password;
-    private Role role;
+    private final String login, password;
+    private final Role role;
     private int carId = -1;
-    private static UserRepository userRepository = new UserRepository();
-    private static VehicleRepository vehicleRepository = new VehicleRepository();
+    private static final UserRepository userRepository = new UserRepository();
+    private static final VehicleRepository vehicleRepository = new VehicleRepository();
 
     public User(String login, String password, Role role) {
         this.login = login;
@@ -50,10 +50,14 @@ public class User {
     }
 
     public void returnVehicle(int vin){
-        String returnStatus = User.vehicleRepository.returnVehicle(vin);
-        this.carId = -1;
-        User.userRepository.changeCarStatus(this);
-        System.out.println(returnStatus);
+        if(vin == User.userRepository.getUser(this.login).getCarId()){
+            String returnStatus = User.vehicleRepository.returnVehicle(vin);
+            this.carId = -1;
+            User.userRepository.changeCarStatus(this);
+            System.out.println(returnStatus);
+        }else{
+            System.out.println("Nie masz wypozyczonego pojazdu o podanym numerze VIN.");
+        }
     }
 
     public void addVehicle(Vehicle vehicle){

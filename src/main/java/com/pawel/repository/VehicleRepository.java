@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VehicleRepository implements IVehicleRepository{
-    private List<Vehicle> vehicles = new ArrayList<>();
+    private final List<Vehicle> vehicles = new ArrayList<>();
     public VehicleRepository() {
         for(Vehicle v : this.vehicles){
             v.toCsv();
