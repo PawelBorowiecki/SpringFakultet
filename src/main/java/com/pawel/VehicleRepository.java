@@ -130,8 +130,9 @@ public class VehicleRepository implements IVehicleRepository{
     }
 
     @Override
-    public void removeVehicle(int vin) {
-        this.vehicles.removeIf(v -> v.vin == vin);
+    public boolean removeVehicle(int vin) {
+        boolean removeStatus = this.vehicles.removeIf(v -> v.vin == vin && !v.rented);
         save();
+        return removeStatus;
     }
 }

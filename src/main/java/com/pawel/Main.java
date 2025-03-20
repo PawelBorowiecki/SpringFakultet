@@ -6,34 +6,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //TODO IVehicleRepository dodac getWehicle(carId)
         Scanner scanner = new Scanner(System.in);
         int option, carYear, carVin, carPrice;
         String loginType, category, inputLogin, inputPassword, inputRole, inputBrand, inputModel, inputType;
         boolean isLoggedIn = false;
         User currentUser = null;
-
-        /*
-        String s = "ling lang guli guli";
-        System.out.println(s);
-        String sha256hex = DigestUtils.sha256Hex(s);
-        System.out.println(sha256hex);
-
-        Car car1 = new Car("Volvo", "XC90", 2022, 45625, 20000, false, "B");
-        repo.addVehicle(car1);
-        Car car2 = new Car("Volvo", "S60", 2018, 47649, 22000, false, "B");
-        repo.addVehicle(car2);
-        Car car3 = new Car("BMW", "X6", 2024, 73625, 25000, false, "B");
-        repo.addVehicle(car3);
-        Car car4 = new Car("BMW", "MX3", 2023, 79856, 35000, false, "B");
-        repo.addVehicle(car4);
-        Car car5 = new Car("Mercedes", "S-klasse", 2021, 62543, 26000, false, "B");
-        repo.addVehicle(car5);
-        Motorcycle moto1 = new Motorcycle("Harley-Davidson", "Breakout", 2021, 956546, 10000, false, "A");
-        repo.addVehicle(moto1);
-        Motorcycle moto2 = new Motorcycle("YAMAHA", "MT", 2017, 87654, 9001, false, "AM");
-        repo.addVehicle(moto2);
-        */
 
         System.out.println("Witaj w wypozyczalni pojazdow!");
         while(true) {
@@ -92,8 +69,10 @@ public class Main {
                         inputModel = scanner.next();
                         System.out.println("Podaj rocznik pojazdu.");
                         carYear = scanner.nextInt();
-                        System.out.println("Podaj pieciocyfrowy nr VIN pojazdu.");
-                        carVin = scanner.nextInt();
+                        do{
+                            System.out.println("Podaj pieciocyfrowy nr VIN pojazdu.");
+                            carVin = scanner.nextInt();
+                        }while(carVin < 10000 || carVin > 99999);
                         System.out.println("Podaj cene wynajecia pojazdu.");
                         carPrice = scanner.nextInt();
                         do{

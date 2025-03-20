@@ -62,7 +62,12 @@ public class User {
 
     public void removeVehicle(int vin){
         if(this.role.equals(Role.ADMIN)){
-            User.vehicleRepository.removeVehicle(vin);
+            boolean removeStatus = User.vehicleRepository.removeVehicle(vin);
+            if(removeStatus){
+                System.out.println("Usunieto pojazd o numerze VIN: " + vin);
+            }else{
+                System.out.println("Nie udalo sie usunac pojazdu.");
+            }
         }else{
             System.out.println("Nie masz uprawnien do wykonania tej operacji.");
         }
@@ -80,7 +85,6 @@ public class User {
     }
 
     public void showUserStatistics(){
-        List<Vehicle> vehicles = User.vehicleRepository.getVehicles();
         List<User> users = User.userRepository.getUsers();
 
         for(User u : users) {

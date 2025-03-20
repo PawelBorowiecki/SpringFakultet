@@ -9,5 +9,5 @@ public interface IVehicleRepository {
     Vehicle getVehicle(int carId);
     void save();
     void addVehicle(Vehicle vehicle);
-    void removeVehicle(int vin);
+    boolean removeVehicle(int vin);
 }

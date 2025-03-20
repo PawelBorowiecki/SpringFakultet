@@ -62,13 +62,6 @@ public class UserRepository implements IUserRepository{
         save();
     }
 
-    public boolean contains(String login){
-        if(this.getUser(login) != null){
-            return true;
-        }
-        return false;
-    }
-
     public void changeCarStatus(User user){
         for(User u : this.users){
             if(u.getLogin().equals(user.getLogin())){
