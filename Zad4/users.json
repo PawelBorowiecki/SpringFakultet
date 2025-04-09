@@ -1,0 +1,14 @@
+[
+  {
+    "id": "f5c8c827-0f13-450d-8c56-ddcce444a1f4",
+    "login": "Pawel",
+    "password": "$2a$10$CWE27EdqWGVOTKxD3ggc6O2c9OL7gmKWDy6Ug2G2Pz6i7Xk3wKYWG",
+    "role": "ADMIN"
+  },
+  {
+    "id": "7376c0f2-70ae-491f-ab2b-61170010a298",
+    "login": "Greg",
+    "password": "$2a$10$xqSUXWlrIeeqCPEgD5Hx/usZsQr32sgAn7r4jxHJdmgsBp7fD.BJ2",
+    "role": "USER"
+  }
+]
